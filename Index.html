@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trái Tim Chuyển Động</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f8f8;
+      margin: 0;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      transform: rotate(-45deg);
+      animation: moveHeart 3s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      left: 50px;
+    }
+
+    .heart::after {
+      top: 50px;
+    }
+
+    .text {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+    }
+
+    @keyframes moveHeart {
+      0% {
+        transform: rotate(-45deg) translate(0, 0);
+      }
+      50% {
+        transform: rotate(-45deg) translate(20px, -20px);
+      }
+      100% {
+        transform: rotate(-45deg) translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">
+    <div class="text">C</div>
+  </div>
+</body>
+</html>
